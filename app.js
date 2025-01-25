@@ -20,6 +20,7 @@ btn.addEventListener("click", () => {
     div.setAttribute("id", "hello");
 
     newELe.append(div);
+
     if (
       nameInp.value == "" ||
       phoneInp.value == "" ||
@@ -45,6 +46,7 @@ btn.addEventListener("click", () => {
     div.append(email1);
     let butn = document.createElement("button");
     butn.setAttribute("id", "del");
+    butn.setAttribute("class", "delete");
     butn.innerHTML = "Delete";
     div.append(butn);
     let nm = document.getElementById(`n${a}`);
@@ -56,6 +58,7 @@ btn.addEventListener("click", () => {
       email: emailInp.value,
       id: n,
     });
+    document.getElementById("hello").addEventListener("click", () => {});
 
     arr.forEach((element) => {
       call.innerHTML = "Phone:" + " " + element.phone;
@@ -68,10 +71,21 @@ btn.addEventListener("click", () => {
     document.querySelector("form").reset();
     document.querySelector("p").innerHTML = "Contact added succesfully!";
     document.querySelector("p").style.color = "green";
-
+    div.addEventListener(
+      "click",
+      function (e) {
+        if (e.target.tagName === "BUTTON") {
+          document.querySelector("p").style.color = "green";
+          document.querySelector("p").innerHTML = "Contanct deleted!";
+          e.target.parentElement.remove();
+        }
+      },
+      false
+    );
     m++;
     a++;
     p++;
+    n++;
   } catch (error) {
     document.querySelector("p").style.color = "red";
     document.querySelector("p").innerHTML = error;
