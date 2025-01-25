@@ -15,9 +15,17 @@
       form {
         margin-bottom: 20px;
       }
+
       ul {
         list-style-type: none;
-        padding: 0;
+        /* padding: 0; */
+        display: flex;
+        flex-direction: column;
+        margin-left: -43px;
+      }
+      h4 {
+        border: 1px solid black;
+        padding: 5px;
       }
       li {
         background: #f9f9f9;
@@ -26,6 +34,15 @@
         display: flex;
         justify-content: space-between;
       }
+      #hello {
+        display: flex;
+        /* width: 90%; */
+      }
+      #del:hover {
+        background-color: white;
+        color: #ff4d4d;
+        border: 2px solid #ff4d4d;
+      }
       button {
         color: #fff;
         background: #ff4d4d;
@@ -33,8 +50,13 @@
         padding: 5px 10px;
         cursor: pointer;
       }
-      ul {
-        display: flex;
+      /* ul {
+        /* display: flex; */
+      /* } */
+      #del {
+        margin-top: 20px;
+        width: 80px;
+        height: 50px;
       }
     </style>
   </head>
@@ -45,6 +67,7 @@
       <input type="number" id="phone" placeholder="Telefon raqami" required />
       <input type="email" id="email" placeholder="Email (ixtiyoriy)" />
       <button type="submit" id="add">Qo'shish</button>
+      <p></p>
     </form>
     <ul id="contactList"></ul>
 
