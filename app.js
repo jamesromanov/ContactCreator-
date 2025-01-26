@@ -67,21 +67,27 @@ btn.addEventListener("click", () => {
 
       mail.innerHTML = "Mail:" + " " + element.email;
     });
-    console.log(arr);
     document.querySelector("form").reset();
     document.querySelector("p").innerHTML = "Contact added succesfully!";
     document.querySelector("p").style.color = "green";
+    setTimeout(() => {
+      document.querySelector("p").innerHTML = "";
+    }, 1500);
     div.addEventListener(
       "click",
       function (e) {
         if (e.target.tagName === "BUTTON") {
           document.querySelector("p").style.color = "green";
           document.querySelector("p").innerHTML = "Contanct deleted!";
+          setTimeout(() => {
+            document.querySelector("p").innerHTML = "";
+          }, 1500);
           e.target.parentElement.remove();
         }
       },
       false
     );
+    console.log(arr);
     m++;
     a++;
     p++;
@@ -89,6 +95,9 @@ btn.addEventListener("click", () => {
   } catch (error) {
     document.querySelector("p").style.color = "red";
     document.querySelector("p").innerHTML = error;
+    setTimeout(() => {
+      document.querySelector("p").innerHTML = "";
+    }, 1500);
 
     console.error(error);
   }
