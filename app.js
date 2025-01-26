@@ -83,11 +83,11 @@ btn.addEventListener("click", () => {
             document.querySelector("p").innerHTML = "";
           }, 1500);
           e.target.parentElement.remove();
+          arr.splice(arr.indexOf(e.target.parentElement));
         }
       },
       false
     );
-    console.log(arr);
     m++;
     a++;
     p++;
@@ -101,4 +101,5 @@ btn.addEventListener("click", () => {
 
     console.error(error);
   }
+  console.log(arr);
 });
