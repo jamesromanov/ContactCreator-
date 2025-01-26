@@ -89,6 +89,7 @@ btn.addEventListener("click", () => {
       false
     );
     m++;
+
     a++;
     p++;
     n++;
